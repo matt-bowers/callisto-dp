@@ -1,35 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
-    
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+  <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+  <meta name="author" content="Bartek Szopka" />
 
-    <!--
-        
-        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
-        presentation to work.
-        
-        This style below contains styles only for demo presentation. Browse it to see how impress.js
-        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
-        you to use them directly in your presentation.
-        
-        Be creative, build your own. We don't really want all impress.js presentations to look the same,
-        do we?
-        
-        When creating your own presentation get rid of this file. Start from scratch, it's fun!
-        
-    -->
-    <link href="css/impress-demo.css" rel="stylesheet" />
-    
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+  <!--
+
+      Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+      presentation to work.
+
+      This style below contains styles only for demo presentation. Browse it to see how impress.js
+      classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+      you to use them directly in your presentation.
+
+      Be creative, build your own. We don't really want all impress.js presentations to look the same,
+      do we?
+
+      When creating your own presentation get rid of this file. Start from scratch, it's fun!
+
+  -->
+  <link href="/css/impress-demo.css" rel="stylesheet" />
+  <link href="/css/tcdp-style.css" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
 <!--
@@ -83,36 +84,40 @@
 -->
 <div id="impress">
   
-  <div class="step" data-x="0" data-y="-8000" data-z="2000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
+  <div class="step" data-x="1000" data-y="-8000" data-z="0" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
     <p>Project Jupyter's <b>Team Callisto</b> presents..</p>
   </div>
   
-  <div id="title" class="step" data-x="0" data-y="0" data-z="0" data-scale="5" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+  <div id="title" class="step" data-x="0" data-y="-8000" data-z="2000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
+    <p>The Callisto <br><b>Design Process</b></p>
+  </div>
+  
+  <div id="moon" class="step" data-x="0" data-y="0" data-z="0" data-scale="5" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
     <p><img src="/images/callisto.png"></p>
   </div>
   
   <div class="step" data-x="3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
-    <p>Step 1</p>
+    <p><span class="stepno">1</span>Identify the <b>Need</b></p>
   </div>
   
   <div class="step" data-x="1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-60">
-    <p>Step 2</p>
+    <p><span class="stepno">2</span>Brainstorm <b>Collectively</b></p>
   </div>
   
   <div class="step" data-x="-1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-120">
-    <p>Step 3</p>
+    <p><span class="stepno">3</span><b>Draft</b> Multiple Solutions for Need</p>
   </div>
   
   <div class="step" data-x="-3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-180">
-    <p>Step 4</p>
+    <p><span class="stepno">4</span>Begin <b>Designing</b> from the <em>Atomic Level</em></p>
   </div>
   
   <div class="step" data-x="-1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-240">
-    <p>Step 5</p>
+    <p><span class="stepno">5</span>Begin <b>Developing</b> Incrementally</p>
   </div>
   
   <div class="step" data-x="1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-300">
-    <p>Step 6</p>
+    <p><span class="stepno">6</span><b>Submit.</b> Celebrate! Then <em>repeat</em> for future needs</p>
   </div>
 
     <!--

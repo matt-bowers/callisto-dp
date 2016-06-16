@@ -1,0 +1,12 @@
+#title {
+  font-size: 6em;
+}
+
+span.stepno {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 500;
+  border: 2px solid white;
+  padding: 15px 26px;
+  border-radius: 100px;
+  margin-right: 30px;
+}
