@@ -43,3 +43,15 @@ span.stepno {
   opacity: 1;
   transform: rotate(5deg);
 }
+
+.step ul li {
+  list-style: circle;
+  margin-left: 1em;
+  padding-left: 0.5em;
+}
+
+.step ul ul li {
+  list-style: square;
+  margin-left: 2.7em;
+  padding-left: 0.8em;
+}
