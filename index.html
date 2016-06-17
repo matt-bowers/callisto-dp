@@ -1,365 +1,407 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=1024" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
 
-  <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-  <meta name="author" content="Bartek Szopka" />
+        <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+        <meta name="author" content="Bartek Szopka" />
 
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
-  <!--
+        <!--
 
-      Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
-      presentation to work.
+Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+presentation to work.
 
-      This style below contains styles only for demo presentation. Browse it to see how impress.js
-      classes are used to style presentation steps, or how to apply fallback styles, but I don't want
-      you to use them directly in your presentation.
+This style below contains styles only for demo presentation. Browse it to see how impress.js
+classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+you to use them directly in your presentation.
 
-      Be creative, build your own. We don't really want all impress.js presentations to look the same,
-      do we?
+Be creative, build your own. We don't really want all impress.js presentations to look the same,
+do we?
 
-      When creating your own presentation get rid of this file. Start from scratch, it's fun!
+When creating your own presentation get rid of this file. Start from scratch, it's fun!
 
-  -->
-  <link href="/css/impress-demo.css" rel="stylesheet" />
-  <link href="/css/tcdp-style.css" rel="stylesheet" />
-
-  <link rel="shortcut icon" href="favicon.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-</head>
-
-<!--
-    
-    Body element is used by impress.js to set some useful class names, that will allow you to detect
-    the support and state of the presentation in CSS or other scripts.
-    
-    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
-    support features required by impress.js, so you should apply some fallback styles in your CSS.
-    It's not necessary to add it manually on this element. If the script detects that browser is not
-    good enough it will add this class, but keeping it in HTML means that users without JavaScript
-    will also get fallback styles.
-    
-    When impress.js script detects that browser supports all required features, this class name will
-    be removed.
-    
-    The class name on body element also depends on currently active presentation step. More details about
-    it can be found later, when `hint` element is being described.
-    
 -->
-<body class="impress-not-supported">
+        <link href="/css/impress-demo.css" rel="stylesheet" />
+        <link href="/css/tcdp-style.css" rel="stylesheet" />
 
-<!--
-    For example this fallback message is only visible when there is `impress-not-supported` class on body.
--->
-<div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
-</div>
-
-<!--
-    
-    Now that's the core element used by impress.js.
-    
-    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
-    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
-    
-    You probably won't need it now, but there are some configuration options that can be set on this element.
-    
-    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
-    a number of ms. It defaults to 1000 (1s).
-    
-    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
-    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
-    If you are willing to change this value make sure you understand how CSS perspective works:
-    https://developer.mozilla.org/en/CSS/perspective
-    
-    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
-    right around the corner of this tag ;)
-    
--->
-<div id="impress">
-  
-  <div class="step" data-x="1000" data-y="-8000" data-z="0" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
-    <p>Project Jupyter's <b>Team Callisto</b> presents..</p>
-  </div>
-  
-  <div id="title" class="step" data-x="0" data-y="-8000" data-z="2000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
-    <p>The Callisto <br><b>Design Process</b></p>
-  </div>
-  
-  <div class="step" data-x="-2500" data-y="-8000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
-    <h1>Discovery Workflow:</h1>
-    <p><span class="stepno"><b>A</b></span>Conduct Research<br>&nbsp;</p>
-    <p><span class="stepno"><b>B</b></span>Analyze findings<br>&nbsp;</p>
-    <p><span class="stepno"><b>C</b></span>Discover our Design Process<br>&nbsp;</p>
-  </div>
-  
-  <div class="step sideimg" data-x="-5000" data-y="-8000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="-30" data-rotate-z="0">
-    <h1>Research:</h1>
-    <h2><b>Don't Make Me Think</b></h2>
-    <p><span class="stepno"><b>+</b></span>Intuitiveness<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span>Efficiency<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span>User Happiness<br>&nbsp;</p>
-    <img src="/images/dontmakemethink.jpg">
-  </div>
-  
-  <div class="step sideimg" data-x="-5000" data-y="-10000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="-30" data-rotate-z="0">
-    <h1>Research:</h1>
-    <h2><b>About Face</b></h2>
-    <p><span class="stepno"><b>+</b></span>Goal-Directed Design<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span>Understanding the Need<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span>Models &amp; Personas<br>&nbsp;</p>
-    <img src="/images/aboutface.jpg">
-  </div>
-  
-  <div class="step" data-x="-7000" data-y="-10000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="30" data-rotate-z="0">
-    <h1>Research:</h1>
-    <h2><b>Digital Design Resources</b></h2>
-    <p><span class="stepno"><b>+</b></span><b>Google's</b> <a href="https://developers.google.com/design-sprint/product/" target="_blank">Design Sprint</a><br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span><b>Intuit Labs'</b> Design for Delight<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span><b>Code School's</b> Elements of Web Design<br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span><b>Humaan's</b> <a href="http://humaan.com/what-we-do/" target="_blank">Design Process</a><br>&nbsp;</p>
-    <p><span class="stepno"><b>+</b></span><b>Brad Frost's</b> <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">Atomic Design</a><br>&nbsp;</p>
-  </div>
-  
-  <div id="moon" class="step" data-x="0" data-y="0" data-z="0" data-scale="5" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
-    <p><img src="/images/callisto.png"></p>
-  </div>
-  
-  <!-- STEP 1 SECTION -->
-  
-  <div class="step" data-x="3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
-    <p><span class="stepno">1</span>Identify the <b>Need</b></p>
-  </div>
-  
-  <div class="step" data-x="3000" data-y="0" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-        <ul>
-          <li>Another list type</li>
-        </ul>
-    </ul>
-  </div>
-  
-  
-  <!-- STEP 2 SECTION -->
-  
-  <div class="step" data-x="1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-60">
-    <p><span class="stepno">2</span>Brainstorm <b>Collectively</b></p>
-  </div>
-  
-  <div class="step" data-x="1500" data-y="-2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-        <ul>
-          <li>Another list type</li>
-        </ul>
-    </ul>
-  </div>
-  
-  
-  <!-- STEP 3 SECTION -->
-  
-  <div class="step" data-x="-1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-120">
-    <p><span class="stepno">3</span><b>Draft</b> Multiple Solutions for Need</p>
-  </div>
-  
-  <div class="step" data-x="-1500" data-y="-2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-        <ul>
-          <li>Another list type</li>
-        </ul>
-    </ul>
-  </div>
-  
-  
-  <!-- STEP 4 SECTION -->
-  
-  <div class="step" data-x="-3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-180">
-    <p><span class="stepno">4</span>Begin <b>Designing</b> from the <em>Atomic Level</em></p>
-  </div>
-  
-  <div class="step" data-x="-3000" data-y="0" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-        <ul>
-          <li>Another list type</li>
-        </ul>
-    </ul>
-  </div>
-  
-  
-  <!-- STEP 5 SECTION -->
-  
-  <div class="step" data-x="-1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-240">
-    <p><span class="stepno">5</span>Begin <b>Developing</b> Incrementally</p>
-  </div>
-  
-  <div class="step" data-x="-1500" data-y="2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-        <ul>
-          <li>Another list type</li>
-        </ul>
-    </ul>
-  </div>
-  
-  
-  <!-- STEP 6 SECTION -->
-  
-  <div class="step" data-x="1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-300">
-    <p><span class="stepno">6</span><b>Submit.</b> Celebrate! Then <em>repeat</em> for future needs</p>
-  </div>
-  
-  <div class="step" data-x="1500" data-y="2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
-    <h2>Here's some title</h2>
-    <p>Here's some other paragraph text. <b>Enjoy!</b></p>
-    <ul>
-      <li>Here's this stuff</li>
-      <ul>
-          <li>Another list type</li>
-      </ul>
-    </ul>
-  </div>
+        <link rel="shortcut icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    </head>
 
     <!--
-        
-        So to summarize of all the possible attributes used to position presentation steps, we have:
-        
-        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
-            the canvas in pixels; their default value is 0;
-        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
-            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
-            are exactly the same;
-        * `data-scale` - defines the scale of step element; default value is 1
-        
-        These values are used by impress.js in CSS transformation functions, so for more information consult
-        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
-        
-    -->
 
-</div>
+Body element is used by impress.js to set some useful class names, that will allow you to detect
+the support and state of the presentation in CSS or other scripts.
 
-<!--
-    
-    Hint is not related to impress.js in any way.
-    
-    But it can show you how to use impress.js features in creative way.
-    
-    When the presentation step is shown (selected) its element gets the class of "active" and the body element
-    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
-    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
-    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
-    
-    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
-    the first step of presentation is visible for a couple of seconds.
-    
-    ...
-    
-    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
-    It's just a quick and dirty workaround to get different hint text for touch devices.
-    In a real world it should be at least placed in separate JS file ... and the touch content should be
-    probably just hidden somewhere in HTML - not hard-coded in the script.
-    
-    Just sayin' ;)
-    
+First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+support features required by impress.js, so you should apply some fallback styles in your CSS.
+It's not necessary to add it manually on this element. If the script detects that browser is not
+good enough it will add this class, but keeping it in HTML means that users without JavaScript
+will also get fallback styles.
+
+When impress.js script detects that browser supports all required features, this class name will
+be removed.
+
+The class name on body element also depends on currently active presentation step. More details about
+it can be found later, when `hint` element is being described.
+
 -->
-<div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
-</div>
-<script>
-if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-}
-</script>
+    <body class="impress-not-supported">
 
-<!--
-    
-    Last, but not least.
-    
-    To make all described above really work, you need to include impress.js in the page.
-    I strongly encourage to minify it first.
-    
-    In here I just include full source of the script to make it more readable.
-    
-    You also need to call a `impress().init()` function to initialize impress.js presentation.
-    And you should do it in the end of your document. Not only because it's a good practice, but also
-    because it should be done when the whole document is ready.
-    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
-    
+        <!--
+For example this fallback message is only visible when there is `impress-not-supported` class on body.
 -->
-<script src="/js/impress.js"></script>
-<script>impress().init();</script>
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        </div>
 
-<!--
-    
-    The `impress()` function also gives you access to the API that controls the presentation.
-    
-    Just store the result of the call:
-    
-        var api = impress();
-    
-    and you will get three functions you can call:
-    
-        `api.init()` - initializes the presentation,
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation,
-        `api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
-                id or the DOM element; second parameter can be used to define duration of the transition in ms,
-                but it's optional - if not provided default transition duration for the presentation will be used.
-    
-    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
-    Don't worry, it wont initialize the presentation again.
-    
-    For some example uses of this API check the last part of the source of impress.js where the API
-    is used in event handlers.
-    
+        <!--
+
+Now that's the core element used by impress.js.
+
+That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+
+You probably won't need it now, but there are some configuration options that can be set on this element.
+
+To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+a number of ms. It defaults to 1000 (1s).
+
+You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+If you are willing to change this value make sure you understand how CSS perspective works:
+https://developer.mozilla.org/en/CSS/perspective
+
+But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+right around the corner of this tag ;)
+
+-->
+        <div id="impress">
+
+            <div class="step" data-x="1000" data-y="-8000" data-z="0" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
+                <p>Project Jupyter's <b>Team Callisto</b> presents..</p>
+            </div>
+
+            <div id="title" class="step" data-x="0" data-y="-8000" data-z="2000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="90">
+                <p>The Callisto <br><b>Design Process</b></p>
+            </div>
+
+            <div class="step" data-x="-2500" data-y="-8000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+                <h1>Discovery Workflow:</h1>
+                <p><span class="stepno"><b>A</b></span>Conduct Research<br>&nbsp;</p>
+                <p><span class="stepno"><b>B</b></span>Analyze findings<br>&nbsp;</p>
+                <p><span class="stepno"><b>C</b></span>Discover our Design Process<br>&nbsp;</p>
+            </div>
+
+            <div class="step sideimg" data-x="-5000" data-y="-8000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="-30" data-rotate-z="0">
+                <h1>Research:</h1>
+                <h2><b>Don't Make Me Think</b></h2>
+                <p><span class="stepno"><b>+</b></span>Intuitiveness<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span>Efficiency<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span>User Happiness<br>&nbsp;</p>
+                <img src="/images/dontmakemethink.jpg">
+            </div>
+
+            <div class="step sideimg" data-x="-5000" data-y="-10000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="-30" data-rotate-z="0">
+                <h1>Research:</h1>
+                <h2><b>About Face</b></h2>
+                <p><span class="stepno"><b>+</b></span>Goal-Directed Design<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span>Understanding the Need<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span>Models &amp; Personas<br>&nbsp;</p>
+                <img src="/images/aboutface.jpg">
+            </div>
+
+            <div class="step" data-x="-7000" data-y="-10000" data-z="3000" data-scale="2" data-rotate-x="0" data-rotate-y="30" data-rotate-z="0">
+                <h1>Research:</h1>
+                <h2><b>Digital Design Resources</b></h2>
+                <p><span class="stepno"><b>+</b></span><b>Google's</b> <a href="https://developers.google.com/design-sprint/product/" target="_blank">Design Sprint</a><br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span><b>Intuit Labs'</b> Design for Delight<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span><b>Code School's</b> Elements of Web Design<br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span><b>Humaan's</b> <a href="http://humaan.com/what-we-do/" target="_blank">Design Process</a><br>&nbsp;</p>
+                <p><span class="stepno"><b>+</b></span><b>Brad Frost's</b> <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">Atomic Design</a><br>&nbsp;</p>
+            </div>
+
+            <div id="moon" class="step" data-x="0" data-y="0" data-z="0" data-scale="5" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+                <p><img src="/images/callisto.png"></p>
+            </div>
+
+            <!-- STEP 1 SECTION -->
+
+            <div class="step" data-x="3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+                <p><span class="stepno">1</span>Identify the <b>Need</b></p>
+            </div>
+
+            <div class="step" data-x="3000" data-y="0" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2><b>Researching</b> the Needs</h2>
+                <p>Don't just jump in blind, find ideas from multiple sources</p>
+                <ul>
+                    <li><b>About Face</b>: Understand the Problem, Design Research</li>
+                    <li>Research of Needs</li>
+                    <ul>
+                        <li>User Interviews & Communication</li>
+                        <li>Analytics Software</li>
+                        <li>Self-Aware Need Identification (bursts of creativity)</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="step" data-x="3000" data-y="0" data-z="-5000" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2>Discovery of the Needs</h2>
+                <p>Keep it <b>Simple</b></p>
+                <ul>
+                    <li>Break up multiple features into multiple needs and processes</li>
+                    <li>Each need should have a <b>Goal</b>, (About Face: Goal-Directed Design)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 2 SECTION -->
+
+            <div class="step" data-x="1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-60">
+                <p><span class="stepno">2</span>Brainstorm Solutions <b>Collectively</b></p>
+            </div>
+
+            <div class="step" data-x="1500" data-y="-2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2><b>Understand</b> the Project</h2>
+                <p>You can't develop a product you don't <b>understand</b></p>
+                <ul>
+                    <li>When we began this first project, we were all pretty much in the dark</li>
+                      <ul>
+                        <li>Take time to understand the project</li>
+                      </ul>
+                    <li>We want to make sure we understand the problem we are trying to solve</li>
+                </ul>
+            </div>
+            
+            <div class="step" data-x="1500" data-y="-2500" data-z="-5000" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2><b>Research</b> where the need may have been solved before</h2>
+                <p><b>Don't Make Me Think</b>: Don't Reinvent the Wheel</p>
+                <ul>
+                    <li>Research can be done by each team member individually before brainstorm collaboration</li>
+                </ul>
+            </div>
+            
+            <div class="step" data-x="1500" data-y="-2500" data-z="-7500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2><b>Collaborate</b> on brainstorming ideas to meet the Goal</h2>
+                <ul>
+                    <li>Pen and paper <i>'no-holds-barred freestyle'</i> style</li>
+                    <ul>
+                      <li>No ideas are bad ideas :^)</li>
+                    </ul>
+                </ul>
+            </div>
+            
+            <div class="step" data-x="1500" data-y="-2500" data-z="-10000" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2><b>Refine </b>the ideas</h2>
+                <ul>
+                    <li>Prioritize which solutions come before others</li>
+                    <li>Ask questions, further the discussion</li>
+                    <ul>
+                      <li>Good questions lead to good ideas</li>
+                    </ul>
+                    <li>Determine which solutions would be the most effective and go from there</li>
+                </ul>
+            </div>
+
+
+            <!-- STEP 3 SECTION -->
+
+            <div class="step" data-x="-1500" data-y="-2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-120">
+                <p><span class="stepno">3</span><b>Draft</b> Multiple Solutions for Need</p>
+            </div>
+
+            <div class="step" data-x="-1500" data-y="-2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
+                <h2>Here's some title</h2>
+                <p>Here's some other paragraph text. <b>Enjoy!</b></p>
+                <ul>
+                    <li>Here's this stuff</li>
+                    <ul>
+                        <li>Another list type</li>
+                    </ul>
+                </ul>
+            </div>
+
+
+            <!-- STEP 4 SECTION -->
+
+            <div class="step" data-x="-3000" data-y="0" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-180">
+                <p><span class="stepno">4</span>Begin <b>Designing</b> from the <em>Atomic Level</em></p>
+            </div>
+
+            <div class="step" data-x="-3000" data-y="0" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
+                <h2>Here's some title</h2>
+                <p>Here's some other paragraph text. <b>Enjoy!</b></p>
+                <ul>
+                    <li>Here's this stuff</li>
+                    <ul>
+                        <li>Another list type</li>
+                    </ul>
+                </ul>
+            </div>
+
+
+            <!-- STEP 5 SECTION -->
+
+            <div class="step" data-x="-1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-240">
+                <p><span class="stepno">5</span>Begin <b>Developing</b> Incrementally</p>
+            </div>
+
+            <div class="step" data-x="-1500" data-y="2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="-90" data-rotate-z="0">
+                <h2>Here's some title</h2>
+                <p>Here's some other paragraph text. <b>Enjoy!</b></p>
+                <ul>
+                    <li>Here's this stuff</li>
+                    <ul>
+                        <li>Another list type</li>
+                    </ul>
+                </ul>
+            </div>
+
+
+            <!-- STEP 6 SECTION -->
+
+            <div class="step" data-x="1500" data-y="2500" data-z="500" data-scale="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="-300">
+                <p><span class="stepno">6</span><b>Submit.</b> Celebrate! Then <em>repeat</em> for future needs</p>
+            </div>
+
+            <div class="step" data-x="1500" data-y="2500" data-z="-2500" data-scale="2" data-rotate-x="0" data-rotate-y="90" data-rotate-z="0">
+                <h2>Here's some title</h2>
+                <p>Here's some other paragraph text. <b>Enjoy!</b></p>
+                <ul>
+                    <li>Here's this stuff</li>
+                    <ul>
+                        <li>Another list type</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!--
+
+So to summarize of all the possible attributes used to position presentation steps, we have:
+
+* `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+the canvas in pixels; their default value is 0;
+* `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
+the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+are exactly the same;
+* `data-scale` - defines the scale of step element; default value is 1
+
+These values are used by impress.js in CSS transformation functions, so for more information consult
+CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+
 -->
 
-</body>
+        </div>
+
+        <!--
+
+Hint is not related to impress.js in any way.
+
+But it can show you how to use impress.js features in creative way.
+
+When the presentation step is shown (selected) its element gets the class of "active" and the body element
+gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+
+This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+the first step of presentation is visible for a couple of seconds.
+
+...
+
+And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+It's just a quick and dirty workaround to get different hint text for touch devices.
+In a real world it should be at least placed in separate JS file ... and the touch content should be
+probably just hidden somewhere in HTML - not hard-coded in the script.
+
+Just sayin' ;)
+
+-->
+        <div class="hint">
+            <p>Use a spacebar or arrow keys to navigate</p>
+        </div>
+        <script>
+            if ("ontouchstart" in document.documentElement) { 
+                document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+            }
+        </script>
+
+        <!--
+
+Last, but not least.
+
+To make all described above really work, you need to include impress.js in the page.
+I strongly encourage to minify it first.
+
+In here I just include full source of the script to make it more readable.
+
+You also need to call a `impress().init()` function to initialize impress.js presentation.
+And you should do it in the end of your document. Not only because it's a good practice, but also
+because it should be done when the whole document is ready.
+Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+
+-->
+        <script src="/js/impress.js"></script>
+        <script>impress().init();</script>
+
+        <!--
+
+The `impress()` function also gives you access to the API that controls the presentation.
+
+Just store the result of the call:
+
+var api = impress();
+
+and you will get three functions you can call:
+
+`api.init()` - initializes the presentation,
+`api.next()` - moves to next step of the presentation,
+`api.prev()` - moves to previous step of the presentation,
+`api.goto( idx | id | element, [duration] )` - moves the presentation to the step given by its index number
+id or the DOM element; second parameter can be used to define duration of the transition in ms,
+but it's optional - if not provided default transition duration for the presentation will be used.
+
+You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+Don't worry, it wont initialize the presentation again.
+
+For some example uses of this API check the last part of the source of impress.js where the API
+is used in event handlers.
+
+-->
+
+    </body>
 </html>
 
 <!--
-    
-    Now you know more or less everything you need to build your first impress.js presentation, but before
-    you start...
-    
-    Oh, you've already cloned the code from GitHub?
-    
-    You have it open in text editor?
-    
-    Stop right there!
-    
-    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
-    first needs to grow in your mind.
-    
-    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
-    
-    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
-    to present. It will get you closer and closer to the layout you'll build later with impress.js.
-    
-    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
-    it earlier, because you'll only waste your time fighting with positioning of useless points.
-    
-    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
-    creating awesome and engaging presentations.
-    
-    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
-    
+
+Now you know more or less everything you need to build your first impress.js presentation, but before
+you start...
+
+Oh, you've already cloned the code from GitHub?
+
+You have it open in text editor?
+
+Stop right there!
+
+That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+first needs to grow in your mind.
+
+So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+
+Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+to present. It will get you closer and closer to the layout you'll build later with impress.js.
+
+Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+it earlier, because you'll only waste your time fighting with positioning of useless points.
+
+If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+creating awesome and engaging presentations.
+
+Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+
 -->
